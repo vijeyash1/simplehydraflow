@@ -31,10 +31,10 @@ type Handler struct {
 func NewHandler() *Handler {
 	conf := ory.NewConfiguration()
 	conf.Servers = ory.ServerConfigurations{{
-		URL: "https://unruffled-gauss-2yivnr1dcc.projects.oryapis.com",
+		URL: "https://gauss-2yivnr1dcc.projects.oryapis.com",
 	}}
 	logger := log.New(os.Stderr, "app: ", log.LstdFlags|log.Lshortfile|log.Llongfile)
-	oryAuthedContext := context.WithValue(context.Background(), ory.ContextAccessToken, "ory_pat_ACe9AwgTyr9caySE3YTz1HoO08CyoVHW")
+	oryAuthedContext := context.WithValue(context.Background(), ory.ContextAccessToken, "ory_pat_ACe9AwgTYTz1HoO08CyoVHW")
 	return &Handler{
 		ApiClient: ory.NewAPIClient(conf),
 		ctx:       oryAuthedContext,
